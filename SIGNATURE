@@ -1,0 +1,46 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.68.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 060d75235f37a8f1b9bd0ba04cd49afd57c21911 Build.PL
+SHA1 00b51bb82a3d02044cbf1c80eafc2b4c09d75577 Changes
+SHA1 c6bf7b4723e72c2108d6763f7c7337610d204a40 MANIFEST
+SHA1 7d20e4e840781030202bb045d5ab81b3fd1b68b0 MANIFEST.SKIP
+SHA1 8c5412b96898c796e9b56fd24f2bf58d1c3057d5 META.yml
+SHA1 cbaaa2067d374a60a5540f273bb3cea799b2c221 Makefile.PL
+SHA1 1c91c6b2719e51465f722d89d4bfb56dab54d9e6 README
+SHA1 44c6c51721a619502be6fe7873ba54de63a0d031 lib/Crypt/Image.pm
+SHA1 78bbd63e8df5de9bf0f93fcd6d60b7ef4a0eebff lib/Crypt/Image/Axis.pm
+SHA1 17c5558d775d7b117abd1810885eedddb7a8bc0d lib/Crypt/Image/Util.pm
+SHA1 4e4e87e1429880a85e6359cb14be113a8ab7fe1a t/00-load.t
+SHA1 6186315ed4a58b176c6a1c970d6dc49a609b831d t/01-new.t
+SHA1 441151d972996e91f6828c4d7e17b20240f2243f t/02-encrypt.t
+SHA1 08ad3d6d404f04484f3a211d744dcb2b32775747 t/03-decrypt.t
+SHA1 57152a08788f797523bff39973a4ac4d01c82531 t/key.gif
+SHA1 280e1bbdff75f41b82e15eeb85bc0086e5b3f007 t/key.jpg
+SHA1 7f11b5dc119c2d5029e779dc645c3ebb2ec559cf t/key.png
+SHA1 95683f98ea4210d7b8ba8bc45d6a62a5bbe4d899 t/manifest.t
+SHA1 73982a48f6781d3bc281a3168624f4301acf59b2 t/pod.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.14 (MingW32)
+
+iQEcBAEBAgAGBQJOYPvwAAoJEPYcXBXhRYOhRtUH/0uDT6HBrGNzYyIuewIAN3X9
+I0IDY/7oRIKPMwgUzbtrgCG2ieKPLJ9nezi270pcJptN4dC88SFXIoMoqSgBXvp7
+0SjTn74e5O6ae37GvAPUyVSoZFlBYZlC+vmOFxN7o6+W40g8VohkspQXRunZRyHQ
+3uUn6glQr1F0BiWHn62obBjwCbbiuaxrBPPRXrBN+No8jQWz68gmng5wTycnWb7K
+uk1FBATgspuQGaF6gPJbj/u2OTalkTxukh8A6bAiierwyZV28HwpB5ZQ3NWPTqaF
+7r3EqYF2zsX0EeHYXXzCnSXHBE4v53ApigPCW0hTEsCdYbIfOpXbcCvCTus82ko=
+=3bPl
+-----END PGP SIGNATURE-----
