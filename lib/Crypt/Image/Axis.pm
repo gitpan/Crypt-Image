@@ -12,11 +12,11 @@ Crypt::Image::Axis - Coordinates of the image used in the Crypt::Image.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 has 'x' => (is => 'ro', isa => 'Num', required => 1);
 has 'y' => (is => 'ro', isa => 'Num', required => 1);

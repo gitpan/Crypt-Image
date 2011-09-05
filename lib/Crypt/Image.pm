@@ -17,11 +17,11 @@ Crypt::Image - Interface to hide text into an image.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 Readonly my $INTENSITY => 30;
 Readonly my $TYPE => { 
     'png' => 1, 
@@ -54,7 +54,8 @@ has 'countc' => (is => 'rw', isa => 'Num',      default  => 0);
 =head1 CONSTRUCTOR
 
 The constructor takes at the least the location key image, currently only supports PNG format.
-Make sure your key images is not TOO BIG. Anything less than 200KB should be fine.
+Make sure your key image is not TOO BIG. Please  refer  to the image key.png supplied with the
+package tar ball to give you a start.
 
     use strict; use warnings;
     use Crypt::Image;
@@ -306,9 +307,8 @@ L<http://search.cpan.org/dist/Crypt-Image/>
 
 =head1 ACKNOWLEDGEMENT
 
-Joonas Vali, author of the blog below, that gave me the idea for this module:
-
-L<http://forum.codecall.net/classes-code-snippets/18135-java-encrypt-text-into-image.html>
+Joonas Vali, author of the blog L<http://forum.codecall.net/classes-code-snippets/18135-java-encrypt-text-into-image.html>
+gave me the idea for this module.
 
 =head1 LICENSE AND COPYRIGHT
 
