@@ -1,5 +1,9 @@
 Revision history for Crypt-Image
 
+0.03    Tue Sep 06 10:11:12 2011
+        - Added more unit test for method encrypt() and decrypt().
+        - Updated the error message thrown by method encrypt() and decrypt().
+
 0.02    Mon Sep 05 09:10:11 2011
         - Minor pod changes.
 

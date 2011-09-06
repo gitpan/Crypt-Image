@@ -17,15 +17,14 @@ Crypt::Image - Interface to hide text into an image.
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 Readonly my $INTENSITY => 30;
 Readonly my $TYPE => { 
     'png' => 1, 
-    # Decryption doesn't work for some reason. However encryption works fine for both types.
     #'gif' => 1, 
     #'jpg' => 1 
 };
@@ -95,9 +94,9 @@ sub encrypt
     my $self = shift;
     my $text = shift;
     my $file = shift;
-    die("ERROR: Missing text to encrypt.\n") unless defined $text;
-    die("ERROR: Missing decrypted file name.\n") unless defined $file;
-    die("ERROR: The string is too long.\n") if ($self->{bytes} < length($text));
+    die("ERROR: Encryption text is missing.\n") unless defined $text;
+    die("ERROR: Decrypted file name is missing.\n") unless defined $file;
+    die("ERROR: Encryption text is too long.\n") if ($self->{bytes} < length($text));
     
     my ($width, $height, $allowed, $count);
     $self->{copy} = Crypt::Image::Util::cloneImage($self->{key});
@@ -145,8 +144,8 @@ sub decrypt
 {
     my $self = shift;
     my $file = shift;
-    die("ERROR: Missing encrypted file name.\n") unless defined $file;
-    die("ERROR: Invalid encrypted file name.\n") unless (-f $file);
+    die("ERROR: Encrypted file missing.\n") unless defined $file;
+    die("ERROR: Encrypted file [$file] not found.\n") unless (-f $file);
     
     my ($allowed, $count, $text, $width, $height);
     

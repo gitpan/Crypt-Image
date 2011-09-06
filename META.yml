@@ -21,13 +21,13 @@ name: Crypt-Image
 provides:
   Crypt::Image:
     file: lib/Crypt/Image.pm
-    version: 0.02
+    version: 0.03
   Crypt::Image::Axis:
     file: lib/Crypt/Image/Axis.pm
-    version: 0.02
+    version: 0.03
   Crypt::Image::Util:
     file: lib/Crypt/Image/Util.pm
-    version: 0.02
+    version: 0.03
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.02
+version: 0.03
