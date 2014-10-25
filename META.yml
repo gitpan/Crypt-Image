@@ -3,31 +3,25 @@ abstract: 'Interface to hide text into an image.'
 author:
   - 'Mohammad S Anwar <mohammad.anwar@yahoo.com>'
 build_requires:
-  Carp::Always: 0.10
-  GD::Image: 2.38
-  Math::Random: 0.71
-  Mouse: 0.93
-  POSIX: 1.09
-  Readonly: 1.03
-  Test::More: 0
+  ExtUtils::MakeMaker: '0'
 configure_requires:
-  Module::Build: 0.36
-generated_by: 'Module::Build version 0.3607'
+  ExtUtils::MakeMaker: '0'
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.141520'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Crypt-Image
-provides:
-  Crypt::Image:
-    file: lib/Crypt/Image.pm
-    version: 0.03
-  Crypt::Image::Axis:
-    file: lib/Crypt/Image/Axis.pm
-    version: 0.03
-  Crypt::Image::Util:
-    file: lib/Crypt/Image/Util.pm
-    version: 0.03
-resources:
-  license: http://dev.perl.org/licenses/
-version: 0.03
+no_index:
+  directory:
+    - t
+    - inc
+requires:
+  GD::Image: '2.38'
+  Math::Random: '0.71'
+  Mouse: '0.93'
+  POSIX: '1.09'
+  Readonly: '1.03'
+  Test::More: '0'
+version: '0.04'

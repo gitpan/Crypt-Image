@@ -1,6 +1,5 @@
 package Crypt::Image::Axis;
 
-use Carp::Always;
 use Data::Dumper;
 
 use Mouse;
@@ -12,11 +11,11 @@ Crypt::Image::Axis - Coordinates of the image used in the Crypt::Image.
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 has 'x' => (is => 'ro', isa => 'Num', required => 1);
 has 'y' => (is => 'ro', isa => 'Num', required => 1);
@@ -33,7 +32,7 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 =head1 BUGS
 
 Please report any bugs or feature requests to C<bug-crypt-image at rt.cpan.org> or through the
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Crypt-Image>.  I will be 
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Crypt-Image>.  I will be
 notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
 =head1 SUPPORT

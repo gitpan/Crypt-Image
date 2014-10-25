@@ -14,7 +14,6 @@ WriteMakefile(
         'POSIX'        => '1.09',
         'GD::Image'    => '2.38',
         'Readonly'     => '1.03',
-        'Carp::Always' => '0.10',
         'Mouse'        => '0.93',
     },
     ($ExtUtils::MakeMaker::VERSION >= 6.3002

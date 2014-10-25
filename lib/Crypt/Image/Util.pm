@@ -2,7 +2,6 @@ package Crypt::Image::Util;
 
 use strict; use warnings;
 
-use Carp::Always;
 use Data::Dumper;
 use Math::Random;
 use Crypt::Image::Axis;
@@ -13,11 +12,11 @@ Crypt::Image::Util - Helper for Crypt::Image module.
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 DESCRIPTION
 
@@ -39,7 +38,7 @@ sub cloneImage
 
 =head2 saveImage()
 
-Saves the given image data as given  file  name  of  the given type. The parameters are listed 
+Saves the given image data as given  file  name  of  the given type. The parameters are listed
 below in sequence:
 
 =over 3
@@ -59,7 +58,7 @@ sub saveImage
     my $file  = shift;
     my $image = shift;
     my $type  = shift;
-    
+
     open(IMAGE, ">$file")
         || die("ERROR: Couldn't open file [$file] for writing. [$!]\n");
     binmode IMAGE;
@@ -79,7 +78,7 @@ sub moveDown
 {
     my $this = shift;
     my $by   = shift;
-    
+
     ($this < 128)?($this += $by):($this -= $by);
     return $this;
 }
@@ -94,7 +93,7 @@ sub moveUp
 {
     my $this = shift;
     my $by   = shift;
-    
+
     ($this >= 128)?($this -= $by):($this += $by);
     return $this;
 }
@@ -110,12 +109,12 @@ sub getColor
     my $r = shift;
     my $g = shift;
     my $b = shift;
-    
+
     my $image = GD::Image->new();
     return $image->colorAllocate($r, $g, $b);
 }
 
-=head2 splitInTwo()    
+=head2 splitInTwo()
 
 Splits the given point into X,Y coordinates & returns an object of type Crypt::Image::Axis.
 
@@ -129,7 +128,7 @@ sub splitInTwo
     return Crypt::Image::Axis->new(x => $a, y => $r);
 }
 
-=head2 splitInThree()    
+=head2 splitInThree()
 
 Splits the given point into X,Y,Z coordinates & returns an object of type Crypt::Image::Axis.
 
@@ -151,7 +150,7 @@ sub splitInThree
         $z = int(random_uniform() * $r);
         $r -= $z;
     }
-    
+
     return Crypt::Image::Axis->new(x => $a, y => $r, z => $z);
 }
 
@@ -180,10 +179,10 @@ sub differenceInAxis
     my $c = shift;
     my $x = shift;
     my $y = shift;
-    
+
     my ($k_r, $k_g, $k_b) = Crypt::Image::Util::getPixelColorRGB($k, $x, $y);
     my ($c_r, $c_g, $c_b) = Crypt::Image::Util::getPixelColorRGB($c, $x, $y);
-    
+
     return (abs($k_r-$c_r), abs($k_g-$c_g), abs($k_b-$c_b));
 }
 
@@ -209,7 +208,7 @@ sub getPixelColorRGB
     my $image = shift;
     my $x = shift;
     my $y = shift;
-    
+
     my $index = $image->getPixel($x, $y);
     my ($r, $g, $b) = $image->rgb($index);
     return ($r, $g, $b);
@@ -222,7 +221,7 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 =head1 BUGS
 
 Please report any bugs or feature requests to C<bug-crypt-image at rt.cpan.org> or through the
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Crypt-Image>.  I will be 
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Crypt-Image>.  I will be
 notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
 =head1 SUPPORT
