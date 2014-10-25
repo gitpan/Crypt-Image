@@ -1,10 +1,10 @@
-package Crypt::Image::Axis;
+package Crypt::Image::Params;
 
-$Crypt::Image::Axis::VERSION = '0.05';
+$Crypt::Image::Params::VERSION = '0.05';
 
 =head1 NAME
 
-Crypt::Image::Axis - Coordinates of the image used in the Crypt::Image.
+Crypt::Image::Params - Placeholder for parameters for Crypt::Image.
 
 =head1 VERSION
 
@@ -13,19 +13,29 @@ Version 0.05
 =cut
 
 use 5.006;
+use strict; use warnings;
 use Data::Dumper;
-use Crypt::Image::Params qw($Num);
 
-use Moo;
-use namespace::clean;
+use vars qw(@ISA @EXPORT @EXPORT_OK);
 
-has 'x' => (is => 'ro', isa => $Num, required => 1);
-has 'y' => (is => 'ro', isa => $Num, required => 1);
-has 'z' => (is => 'ro', isa => $Num);
+require Exporter;
+@ISA = qw(Exporter);
+@EXPORT_OK = qw($FilePath $FileType $Num $INTENSITY);
+
+our $INTENSITY = 30;
+
+our $Num = sub { return check_num($_[0]); };
+sub check_num  { die "ERROR: Invalid NUM data type [$_[0]]" unless (defined $_[0] && $_[0] =~ /^\d+$/); }
+
+our $FilePath = sub { die "ERROR: Invalid file path [$_[0]]" unless check_file_path($_[0]); };
+sub check_file_path { return (-f $_[0]) };
+
+my $FILE_TYPE = { 'png' => 1 };
+our $FileType = sub { die "ERROR: Invalid file type [$_[0]]" unless exists $FILE_TYPE->{lc($_[0])}; };
 
 =head1 DESCRIPTION
 
-Used internally by Crypt::Image::Util module.
+Used internally by Crypt::Image module.
 
 =head1 AUTHOR
 
@@ -46,7 +56,7 @@ bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Crypt::Image::Axis
+    perldoc Crypt::Image::Params
 
 You can also look for information at:
 
@@ -110,4 +120,4 @@ OF THE PACKAGE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =cut
 
-1; # End of Crypt::Image::Axis
+1; # End of Crypt::Image::Params
